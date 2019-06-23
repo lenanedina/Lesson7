@@ -23,7 +23,7 @@ namespace Lesson7
 
         public DateTime Date { get => date; set => date = value; }
         public sbyte TMin { get => tMin; set => tMin = value; }
-        public sbyte TMax { get => tMax; set => tMax = value; }          
+        public sbyte TMax { get => tMax; set => tMax = value; }
         internal Dic.Overcast Overcast { get => overcast; set => overcast = value; }
         internal Dic.Precipitations Precipitations { get => precipitations; set => precipitations = value; }
         public byte Humidity { get => humidity; set => humidity = value; }
@@ -43,8 +43,22 @@ namespace Lesson7
             WindDirection = windDirection;
             PhaseMoon = phaseMoon;
         }
+        public override string ToString()
+        {
+            string result = 
+                $"Дата:                      {Date.ToShortDateString()}\n" +
+                $"температура минимальная:   {TMin}\n" +
+                $"температура максимальная:  {TMax}\n" +
+                $"облачность:                {Overcast}\n" +
+                $"осадки:                    {Precipitations}\n" +
+                $"влажность:                 {Humidity}\n" +
+                $"сила ветра:                {WindForce}\n" +
+                $"направление ветра:         {WindDirection}\n" +
+                $"фаза луны:                 {PhaseMoon}\n";
 
 
+            return result;
+
+        }
     }
-
 }
